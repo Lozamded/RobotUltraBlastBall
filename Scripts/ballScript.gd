@@ -2,6 +2,7 @@ extends Node2D
 
 var dirY = 1
 var dirX = 1
+var initialspeed = 112
 var speed = 112 
 var rotationvalue = 12
 
@@ -28,6 +29,9 @@ func _physics_process(delta):
 	#print ("escala "  + str(scale.x))
 	$Sprite.rotation += rotationvalue  * delta
 	
+func reset_speed():
+	speed = initialspeed
+
 
 func _on_Area2D_area_entered(area):
 	if area.is_in_group('topeslaterales'):
@@ -40,8 +44,9 @@ func _on_Area2D_area_entered(area):
 			print ("al player")
 			area.quitarvida(Global.golpes)
 			Global.golpes = 0
+			reset_speed()
 		dirY *= -1
-		speed += 25
+		#speed += 25
 		
 	if area.is_in_group('espada'):
 		Global.golpes += 1
@@ -51,4 +56,4 @@ func _on_Area2D_area_entered(area):
 			control.update_golpes()
 		
 		dirY *= -1
-		speed += 50
+		speed += 100
