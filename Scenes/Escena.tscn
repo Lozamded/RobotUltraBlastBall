@@ -1,0 +1,311 @@
+[gd_scene load_steps=26 format=2]
+
+[ext_resource path="res://Objects/Vida.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Font/Sub_Menu_fuente.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Objects/cancha.png" type="Texture" id=3]
+[ext_resource path="res://Objects/ball.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Objects/Robots/RobotoJugador.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Objects/Robots/RobotoEnemy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Objects/golpes.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/levelController.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/cantidadgolpes.gd" type="Script" id=9]
+[ext_resource path="res://Scripts/CollisionVida.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/spacebg.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/movingBackground.gd" type="Script" id=14]
+[ext_resource path="res://Font/Warning_fuente.tres" type="DynamicFont" id=18]
+[ext_resource path="res://admob-lib/admob.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Main.gd" type="Script" id=20]
+[ext_resource path="res://Font/Estudiante.tres" type="DynamicFont" id=22]
+[ext_resource path="res://Particles/Explosion.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Sounds/Music/MAZE_Density_Time.ogg" type="AudioStream" id=24]
+[ext_resource path="res://Sprites/cielo_t.png" type="Texture" id=25]
+[ext_resource path="res://Objects/MenuPausa.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Font/Main_Menu_Fuente.tres" type="DynamicFont" id=29]
+[ext_resource path="res://Sprites/black.png" type="Texture" id=30]
+[ext_resource path="res://Objects/MenuPuntaje.tscn" type="PackedScene" id=31]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 36.8853, 822.491 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 403.488, 27.7953 )
+
+[node name="Escena" type="Node2D"]
+script = ExtResource( 20 )
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( -47, 0 )
+
+[node name="spacebg" type="Sprite" parent="Background"]
+position = Vector2( 440.2, 742.987 )
+scale = Vector2( 1.44299, 1.58882 )
+texture = ExtResource( 11 )
+region_enabled = true
+region_rect = Rect2( 21.0526, -0.0298004, 1062.54, 941.105 )
+script = ExtResource( 14 )
+
+[node name="cancha" type="Sprite" parent="Background"]
+position = Vector2( 388.27, 706.249 )
+scale = Vector2( 1.08882, 2.09665 )
+texture = ExtResource( 3 )
+
+[node name="cielo_t" type="Sprite" parent="."]
+position = Vector2( -327.058, 1418.93 )
+scale = Vector2( 5.41172, 5.99686 )
+texture = ExtResource( 25 )
+offset = Vector2( 122.754, -3.70709 )
+
+[node name="cielo_t2" type="Sprite" parent="."]
+position = Vector2( 1199.18, -139.238 )
+rotation = -3.14159
+scale = Vector2( 5.41172, 5.99686 )
+texture = ExtResource( 25 )
+offset = Vector2( 122.754, -3.70709 )
+
+[node name="control" type="Node2D" parent="."]
+script = ExtResource( 8 )
+
+[node name="Golpes" parent="control" instance=ExtResource( 7 )]
+margin_left = 43.0
+margin_top = 14.0
+margin_right = 528.0
+margin_bottom = 141.0
+rect_scale = Vector2( 0.6, 0.76 )
+text = "Golpes: 0"
+script = ExtResource( 9 )
+
+[node name="VidaPlayer" parent="control" instance=ExtResource( 1 )]
+margin_left = 7.80664
+margin_top = 1309.74
+margin_right = 719.807
+margin_bottom = 1337.74
+
+[node name="VidaVenemy" parent="control" instance=ExtResource( 1 )]
+margin_left = -2.87207
+margin_top = 129.745
+margin_right = 709.128
+margin_bottom = 157.745
+
+[node name="Limites" type="Node2D" parent="control"]
+
+[node name="lateraizquierdo" type="Area2D" parent="control/Limites" groups=[
+"topeslaterales",
+]]
+position = Vector2( 206, 90 )
+rotation = 0.228264
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control/Limites/lateraizquierdo"]
+position = Vector2( -46.7026, 551.572 )
+shape = SubResource( 1 )
+
+[node name="lateraiderecho" type="Area2D" parent="control/Limites" groups=[
+"topeslaterales",
+]]
+rotation = -0.132237
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control/Limites/lateraiderecho"]
+position = Vector2( 562.757, 722.099 )
+rotation = -0.102635
+shape = SubResource( 1 )
+
+[node name="Superior" type="Area2D" parent="control/Limites" groups=[
+"topesvida",
+]]
+script = ExtResource( 10 )
+corresponde = "Enemy"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control/Limites/Superior"]
+position = Vector2( 344.466, 139.691 )
+shape = SubResource( 2 )
+
+[node name="Inferior" type="Area2D" parent="control/Limites" groups=[
+"topesvida",
+]]
+script = ExtResource( 10 )
+corresponde = "Player"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="control/Limites/Inferior"]
+position = Vector2( 344.466, 1324.14 )
+shape = SubResource( 2 )
+
+[node name="Menu" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="Menu"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Start" type="Button" parent="Menu/Control"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -190.5
+margin_top = -38.0
+margin_right = 190.5
+margin_bottom = 38.0
+focus_mode = 0
+custom_fonts/font = ExtResource( 18 )
+enabled_focus_mode = 0
+text = "KEY_START"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Titulo" type="Label" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.5
+margin_top = -351.5
+margin_right = 275.5
+margin_bottom = -52.5
+custom_fonts/font = ExtResource( 2 )
+text = "SUB_TITLE"
+align = 1
+valign = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxScoreLabel" type="Label" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -135.0
+margin_top = 265.5
+margin_right = 135.0
+margin_bottom = 314.5
+custom_fonts/font = ExtResource( 22 )
+text = "MAXSCORE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MaxScore" type="Label" parent="Menu/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -132.875
+margin_top = 319.497
+margin_right = 132.875
+margin_bottom = 368.503
+custom_fonts/font = ExtResource( 22 )
+text = "30000"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AdMob" type="Node" parent="."]
+script = ExtResource( 19 )
+banner_id = "ca-app-pub-7327574553461407/6678654496"
+interstitial_id = "ca-app-pub-7327574553461407/5325016702"
+rewarded_id = "ca-app-pub-7327574553461407/5206624878"
+is_personalized = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+pause_mode = 2
+position = Vector2( 350, 750 )
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 1.0
+drag_margin_right = 0.0
+drag_margin_bottom = 1.0
+editor_draw_limits = true
+editor_draw_drag_margin = true
+
+[node name="Explosion" parent="." instance=ExtResource( 23 )]
+position = Vector2( 1592.88, 12.2853 )
+
+[node name="ExplosionSFX" parent="Explosion" index="2"]
+volume_db = -80.0
+
+[node name="Musica" type="AudioStreamPlayer" parent="."]
+pause_mode = 2
+stream = ExtResource( 24 )
+volume_db = -6.0
+autoplay = true
+bus = "Music_bus"
+
+[node name="MenuPausa" parent="." instance=ExtResource( 28 )]
+
+[node name="BANNER" type="Button" parent="MenuPausa/Panel" index="9"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.4271
+margin_top = -438.648
+margin_right = 78.5729
+margin_bottom = -390.648
+custom_fonts/font = ExtResource( 29 )
+text = "BANNER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje" parent="." instance=ExtResource( 31 )]
+
+[node name="blackbox" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 1 )
+position = Vector2( 361.114, -150.99 )
+scale = Vector2( 1.45168, 1 )
+z_index = 100
+texture = ExtResource( 30 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 700, 300 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ball" parent="." instance=ExtResource( 4 )]
+position = Vector2( 338.923, 666.295 )
+controlPath = NodePath("../control")
+
+[node name="RobotoJugador" parent="." instance=ExtResource( 5 )]
+position = Vector2( 349.084, 1301.29 )
+
+[node name="espada" parent="RobotoJugador" index="0" groups=[
+"espada",
+]]
+
+[node name="Area2D" parent="RobotoJugador/espada" index="0" groups=[
+"espada",
+]]
+
+[node name="Robotoenemy" parent="." instance=ExtResource( 6 )]
+position = Vector2( 353.346, 235.283 )
+scale = Vector2( 1.25, 1.25 )
+
+[node name="espada" parent="Robotoenemy" index="3" groups=[
+"espada",
+]]
+[connection signal="banner_failed_to_load" from="AdMob" to="." method="_on_AdMob_banner_failed_to_load"]
+[connection signal="banner_loaded" from="AdMob" to="." method="_on_AdMob_banner_loaded"]
+[connection signal="interstitial_failed_to_load" from="AdMob" to="." method="_on_AdMob_interstitial_failed_to_load"]
+[connection signal="interstitial_loaded" from="AdMob" to="." method="_on_AdMob_interstitial_loaded"]
+[connection signal="rewarded_video_failed_to_load" from="AdMob" to="." method="_on_AdMob_rewarded_video_failed_to_load"]
+[connection signal="rewarded_video_loaded" from="AdMob" to="." method="_on_AdMob_rewarded_video_loaded"]
+[connection signal="button_down" from="MenuPausa/Panel/BANNER" to="." method="_on_BANNER_button_down"]
+
+[editable path="Explosion"]
+
+[editable path="MenuPausa"]
+
+[editable path="RobotoJugador"]
+
+[editable path="RobotoJugador/espada"]
+
+[editable path="Robotoenemy"]

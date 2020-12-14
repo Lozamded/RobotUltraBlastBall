@@ -1,0 +1,25 @@
+keys,es,en,de,ko,ja,ru,zh,fr,it,pt
+KEY_START,Empezar,Start,Start,스타트,開始,Начните,开始,Début,Inizio,Começar
+SOUND_MENU_TITLE,Menu de Sonido,Sound Menu,Tonmenü,사운드 메뉴,サウンドメニュー,Меню Звук,声音菜单,Menu Son,Menu Audio,Menu De Som
+SOUND_MENU_GENERAL,General,General,Allgemeines,일반,一般的な,Генеральный,一般,Général,Generale,Geral
+SOUND_MENU_MUSICA,Musica,Music,Musik,음악,音楽,Музыка,音乐,Musique,Musica,Música
+SOUND_MENU_EFECTOS,Efectos,Effects,Auswirkungen,효과,効果,Последствия,效果,Effets,Effetti,Efeito
+WARNING,Advertencia,Warning,Warnung,경고,警告,Предупреждение,警告,Attention,Avvertimento,Atenção
+SCORE,Puntajes,Scores,Partituren,점수,スコア,Множество,分数,Scores,Punteggi,Pontuação
+TEXT_TUTORIAL1,Para saltar desliza hacia arriba,To jump do a slide up,Zum Überspringen Dias Bis,슬라이드를 건너 뛰려면,スライドをスキップするには,"Для Того, Чтобы Пропускать Слайды Вверх",要跳过向上滑动,Pour Sauter Coulisse,Per Saltare Diapositive Up,Para Pular Desliza Para Cima
+TEXT_TUTORIAL2,Para hacer un barrido dezliza hacia abajo,To do a dash do a slide Down,Zu Fegen Schwarz Gleitet,아래로 검은 색 슬라이드를 청소하려면,黒いスライドをスイープダウンするには,Прокатиться Черные Слайды Вниз,扫黑滑落,Pour Balayer Les Diapositives En Noir Vers Le Bas,Per Spazzare Diapositive In Bianco Verso Il Basso,Para Varrer Lâminas Pretas Para Baixo
+TEXT_TUTORIAL3,Recoge estos simbolos para aumentar la fuerza de tus golpes,Collect These Symbols To Increase The Strength Of Your fists,Sammeln Sie Diese Symbole Die Stärke Ihrer Aufnahmen Zu Erhöhen,당신의 샷의 강도를 높이기 위해 이러한 기호를 수집,あなたのショットの強さを高めるために、これらのシンボルを収集,"Собирать Эти Символы, Чтобы Увеличить Силу Ваших Снимков",收集这些符号来提高你的击球力量,Recueillir Ces Symboles Pour Augmenter La Force De Vos Coups,Raccogliere Questi Simboli Per Aumentare La Forza Dei Vostri Scatti,Colete Estes Símbolos Para Aumentar A Força De Seus Tiros
+TEXT_TUTORIAL4,Estas monedas pueden restaurar tu salud,These Coins Can Restore Your Health,Diese Münzen Können Ihre Gesundheit Wiederherstellen,이 동전은 당신의 건강을 복원 할 수 있습니다,これらの硬貨は、あなたの健康を復元することができます,Эти Монеты Могут Восстановить Свое Здоровье,这些硬币可以恢复你的健康,Ces Pièces Peuvent Restaurer Votre Santé,Queste Monete Possono Ripristinare La Vostra Salute,Estas Moedas Podem Restaurar Sua Saúde
+TEXT_FIN_DE_NIVEL,Algo peligroso se acerca,Something Dangerous About,Etwas Gefährliches,뭔가 위험에 대한,何か危険について,Что-То Опасное,危险的东西有关,A Propos De Quelque Chose De Dangereux,Qualcosa Su Pericolosa,Algo Sobre Perigosa
+TEXT_PUNCH_BOSS,Ahora toca para golpearlo,Now It Is To Hit Him,"Nun Ist Es, Ihn Zu Schlagen",지금은 그를 공격하는 것입니다,今では彼を打つことです,"Теперь, Чтобы Ударить Его",现在是向他袭来,"Maintenant, Il Est De Le Frapper",Ora È Di Colpirlo,Agora É Para Acertá-Lo
+TEXT_PUNCH_BOSS2,Ahora dale el golpe final,Now Give The Final Blow,Jetzt Gibt Den Letzten Schlag,이제 마지막 타격을 줄,今、最終的な打撃を与えます,Теперь Дайте Последний Удар,现在给最后一击,Maintenant Donner Le Coup Final,Ora Dare Il Colpo Finale,Agora Dar O Golpe Final
+TEXT_DEAD_BY_DAMAGE,Nos han derrotado,We Have Defeated,Wir Haben Besiegt,우리는 패배,我々は敗北しています,Мы Победили,我们已经击败了,Nous Avons Vaincu,Abbiamo Sconfitto,Nós Ter Derrotado
+TEXT_DEAD_BY_FALL,"Ouch, eso debe doler","Ouch, That Must Hurt","Autsch, Das Muss Weh","아야, 그 필수의 상처",痛い、その必須傷つけます,"Ой, Что Должно Быть Больно",哎哟，那一定很疼,"Aïe, Ça Fait Mal Doit","Ahi, Che Male Must",Ouch. Isso Deve Doer
+TEXT_PUNCHED_BOSS,¡Bíen! así,All Right! So,Gut! Damit,괜찮아! 그래서,大丈夫！そう,Все В Порядке! Так,好吧！所以,Bien! Donc,Tutto Ok! Così,Boa! Então
+TEXT_DEFEATED_BOSS,¡Bien! Lo hicimos... Ahora él podrá volver a la normalidad...,Well! We Did ... Now He Can Go Back To Normal ...,Gut! Wir Haben ... Jetzt Kann Er Wieder Normal ...,잘! 우리는 ... 지금은 정상으로 돌아 갈 수 있습니다 않았다 ...,上手！私たちは...今、彼は正常に戻って行くことができませんでした...,Хорошо! Мы Сделали ... Теперь Он Может Вернуться К Нормальной Жизни ...,好！成功!我们不... 现在，您可以恢复正常... ,"Bien! Nous Avons ... Maintenant, Il Peut Revenir À La Normale ...",Bene! Abbiamo Fatto ... Ora Può Tornare Alla Normalità ...,Boa! agora ele pode voltar ao normal
+TEXT_BAT_ENTER,El murciélago. ese es nuestro objetivo,The Bat. That Is Our Goal,Die Fledermaus. Das Ist Unser Ziel,박쥐. 그게 우리의 목표입니다,バット。それが私たちの目標です,Летучая Мышь. Что Наша Цель,我们找到了蝙蝠,La Chauve-Souris. Qui Est Notre Objectif,Il Pipistrello. Questo È Il Nostro Obiettivo,O Morcego. Que É O Nosso Objetivo
+GAMEOVER,Juego Terminado,Game Over,Spiel Ist Aus,게임 끝,ゲームオーバー,Игра Окончена,游戏结束,Jeu Terminé,Gioco Finito,Fim De Jogo
+SUB_TITLE,Arañas,Spiders,Spinnen,거미,クモ,Пауки,蜘蛛網,Araignées,Ragni,Araignées
+FELICIDADES,FELICITACIONES Proximamente mas niveles,Congratulations More Levels Coming Soon,Mehr Ebenen Congratulations In Kürze,곧 축하 더 수준,すぐに来ておめでとうござい以上のレベル,Поздравляем Больше Уровней В Ближайшее Время,恭喜以上的水平即将推出,Félicitations Plus De Niveaux À Venir,Congratulazioni Più Livelli In Arrivo,Parabéns Mais Níveis Em Breve
+BTN_CONTINUAR,Continuar,Continue,Fortsetzen,계속하다,継続する,Продолжить,继续,Continuer,Continua,Continuar
+VISITANOS,Visitanos en:,Visit Us In:,Besuchen Sie Uns In:,우리를 방문하십시오 :,私達を訪問して：,Посетите Нас В:,访问我们在：,Venez Nous Rendre Visite À:,Venite A Trovarci A:,Visite-Nos Em:

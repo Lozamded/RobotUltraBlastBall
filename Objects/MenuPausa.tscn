@@ -1,0 +1,190 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font/Main_Menu_Fuente.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Font/Estudiante.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scripts/MenuPausa.gd" type="Script" id=3]
+[ext_resource path="res://Objects/Menu/Idioma.tscn" type="PackedScene" id=4]
+
+[node name="MenuPausa" type="CanvasLayer"]
+pause_mode = 2
+script = ExtResource( 3 )
+
+[node name="Pausa" type="Button" parent="."]
+modulate = Color( 1, 0.996078, 0, 1 )
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -155.431
+margin_top = -732.396
+margin_right = -15.4315
+margin_bottom = -657.396
+custom_fonts/font = ExtResource( 1 )
+text = "Menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -250.0
+margin_top = -350.0
+margin_right = 250.0
+margin_bottom = 350.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Panel"]
+modulate = Color( 0, 0, 0, 0.666667 )
+show_behind_parent = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -700.0
+margin_top = -1000.0
+margin_right = 700.0
+margin_bottom = 1000.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Menu" type="Label" parent="Panel"]
+modulate = Color( 1, 0, 0, 1 )
+anchor_right = 1.0
+margin_top = 42.0
+margin_bottom = 84.0
+custom_fonts/font = ExtResource( 2 )
+text = "SOUND_MENU_TITLE"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Master" type="Label" parent="Panel"]
+margin_left = 20.0
+margin_top = 150.0
+margin_right = 432.0
+margin_bottom = 192.0
+custom_fonts/font = ExtResource( 1 )
+text = "SOUND_MENU_GENERAL"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Master" type="HScrollBar" parent="Panel"]
+anchor_right = 0.25
+margin_left = 10.0
+margin_top = 200.0
+margin_bottom = 212.0
+rect_scale = Vector2( 4, 4 )
+size_flags_horizontal = 2
+min_value = -36.0
+max_value = -6.0
+step = 0.01
+page = 1.0
+value = -7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label Musica" type="Label" parent="Panel"]
+margin_left = 20.0
+margin_top = 260.0
+margin_right = 439.0
+margin_bottom = 302.0
+custom_fonts/font = ExtResource( 1 )
+text = "SOUND_MENU_MUSICA"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Musica" type="HScrollBar" parent="Panel"]
+anchor_right = 0.25
+margin_left = 10.0
+margin_top = 310.0
+margin_bottom = 322.0
+rect_scale = Vector2( 4, 4 )
+min_value = -36.0
+max_value = -6.0
+step = 0.01
+page = 1.0
+value = -7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label SFX" type="Label" parent="Panel"]
+margin_left = 20.0
+margin_top = 370.0
+margin_right = 439.0
+margin_bottom = 412.0
+custom_fonts/font = ExtResource( 1 )
+text = "SOUND_MENU_EFECTOS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SFX" type="HScrollBar" parent="Panel"]
+anchor_right = 0.25
+margin_left = 10.0
+margin_top = 420.0
+margin_bottom = 432.0
+rect_scale = Vector2( 4, 4 )
+min_value = -36.0
+max_value = -6.0
+step = 0.01
+page = 1.0
+value = -7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuitaPausa" type="Button" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -106.0
+margin_top = -127.2
+margin_right = 106.0
+margin_bottom = -56.0
+custom_fonts/font = ExtResource( 1 )
+text = "Volver"
+
+[node name="Idioma" parent="." instance=ExtResource( 4 )]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -184.0
+margin_top = 621.5
+margin_right = -12.0
+margin_bottom = 732.5
+
+[node name="Salir" type="Button" parent="."]
+visible = false
+modulate = Color( 1, 0.52549, 0.52549, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -77.4998
+margin_top = 643.0
+margin_right = 77.4998
+margin_bottom = 721.0
+custom_fonts/font = ExtResource( 1 )
+text = "Salir"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="Pausa" to="." method="_on_Pausa_button_down"]
+[connection signal="value_changed" from="Panel/Master" to="." method="_on_Master_value_changed"]
+[connection signal="value_changed" from="Panel/Musica" to="." method="_on_Musica_value_changed"]
+[connection signal="value_changed" from="Panel/SFX" to="." method="_on_SFX_value_changed"]
+[connection signal="button_down" from="Panel/QuitaPausa" to="." method="_on_Pausa_button_down"]
+[connection signal="button_down" from="Salir" to="." method="_on_Salir_button_down"]
